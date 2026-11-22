@@ -1,19 +1,16 @@
 import './style.css';
 
 export default function TopBookItem({author, title, image}) {
-  return (
-    <div className="flex flex-row">
+  return <div className="flex flex-row gap-2.5 pr-4">
       <div>
-        <img
-          style={{ width: '54px', height: '80px', borderRadius: '8px' }}
+        <img className='w-13.5, h-20 rounded-lg'
           src= {image}
           alt="image"
         />
       </div>
-      <div className="flex flex-col justify-between">
-        <h2 style={{fontSize: '14px', fontWeight: '700'}}>{title}</h2>
-        <p style={{paddingBottom: '25px', fontSize: '13px', fontWeight: '400', color: 'rgba(240, 240, 240, 0.72)'}}>{author}</p>
+      <div className="flex flex-col justify-between pb-4.5">
+        <h2 className='text-[14px] text-[#FCFCFC] line-clamp-2'>{title}</h2>
+        <p className='text-[rgba(240, 240, 240, 0.72)] text--[13px]'>{author}</p>
       </div>
     </div>
-  );
 }
