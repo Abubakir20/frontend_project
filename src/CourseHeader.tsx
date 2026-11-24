@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import IconAndText from "./IconandText.tsx";
 
 function CourseHeader() {
   let rating = 3;
   let ratingArray = Array.from({length: 5});
+  const [isOpen, setIsOpen] = useState(false);
+  console.log(isOpen);
 
   return <div className="relative w-full min-w-240 h-48.5 bg-black rounded-lg border-[#F7F9FA]/8 border overflow-hidden">
     <img className="absolute blur-xl top-0 left-0 z-0  w-full h-full object-cover" src="/header-background.png" alt="image"/>
@@ -35,7 +38,7 @@ function CourseHeader() {
         </div>
 
         <div className="flex flex-row gap-4">
-          <button className="h-12.5 px-10 rounded-lg bg-[#1C92E0] text-white">Kursni sotib olish</button>
+          <button className={`... w-62.5 h-12.5 px-10 rounded-lg bg-[#1C92E0] text-white ${isOpen ? '' : 'bg-[#F7F9FA]/10'}`} onClick={() => setIsOpen(!isOpen)}>{isOpen ? 'Kursni sotib olish' : 'Kurs sotib olingan'}</button>
 
           <button className="flex items-center justify-center w-12.5 h-12.5 rounded-lg border border-[#F7F9FA]/30 bg-[#F7F9FA]/10">
             <img src="/heart-outline.svg" alt="icon"/>
