@@ -1,8 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import './style.css';
-import Page from './Page';
-import CartComponent from './CartComponent';
-import BookPage from './BookPage';
+import CartPage from './CartPage';
 
 const root = createRoot(document.getElementById('root')!);
-root.render(<BookPage/>);
+root.render(<CartPage/>);
